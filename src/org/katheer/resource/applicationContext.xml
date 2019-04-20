@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="add1" class="org.katheer.bean.Address" autowire-candidate="false">
+        <property name="firstLine" value="4/167, Mahalakshmi Nagar"/>
+        <property name="secondLine" value="MM Kovilur Pirivu, Dindigul"/>
+        <property name="pin" value="624005"/>
+    </bean>
+
+    <bean id="add2" class="org.katheer.bean.Address">
+        <property name="firstLine" value="121, North Usman Road"/>
+        <property name="secondLine" value="Vadapalani, Chennai"/>
+        <property name="pin" value="600012"/>
+    </bean>
+
+    <bean id="std1" class="org.katheer.bean.Student" autowire="byType">
+        <property name="name" value="Abdul Katheer"/>
+        <property name="regNo" value="152071015"/>
+        <property name="address" ref="add1"/>
+    </bean>
+</beans>
